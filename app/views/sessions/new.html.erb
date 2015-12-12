@@ -1,0 +1,33 @@
+<div class="row">
+
+	<div class="col-ms-7 col-ms-offset-5">
+
+		<h1>Log in</h1>
+
+	</div>
+
+	<div class="col-md-6 col-md-offset-3">
+			
+		<% flash.each do |name, msg| %>
+
+			<%= content_tag :div, msg, class: "alert alert-danger" %>
+
+		<% end %>
+
+		<%= form_for(:session, url: login_path) do |f| %>
+
+			<%= f.label :email %>
+			<%= f.email_field :email, class: 'form-control' %>
+
+			<%=  f.label :password %>
+			<%= f.password_field :password, class: 'form-control' %>
+
+			<%= f.submit "Log me in", class: "btn btn-primary"%>
+
+		<% end %>
+
+		<p>Create an account: <%= link_to "Create a new account", signup_path %></p>
+
+	</div>
+
+</div>

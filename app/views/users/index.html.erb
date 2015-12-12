@@ -1,0 +1,52 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Users</h1>
+
+<%= will_paginate @users %>
+
+<% @users.each do |user| %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-10">
+      
+        <div class="panel panel-default">
+        <div class="panel-body">
+                    <div class="row">
+                          <div class="col-xs-12 col-sm-10">
+                              <h2><%= link_to user.name, user %></h2>
+                              <p><strong>Email: </strong> <%= user.email %></p>
+                              <p><strong>Description: </strong> <%= user.description %></p>
+                              <p><strong>Gender: </strong> <%= user.sex %></p> 
+                              <p><strong>Skills: </strong>
+                                  <span class="label label-info tags">html5</span> 
+                                  <span class="label label-info tags">css3</span>
+                                  <span class="label label-info tags">jquery</span>
+                                  <span class="label label-info tags">bootstrap3</span>
+                              </p>
+                          </div><!--/col-->          
+                          <div class="col-xs-12 col-sm-2 text-center">
+                                  <%= gravatar_link user%>
+                                  <ul class="list-inline ratings text-center" title="Ratings">
+                                    <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                    <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+                                  </ul>
+                          </div><!--/col-->
+
+                    </div><!--/row-->
+                </div><!--/panel-body-->
+            </div><!--/panel-->
+
+      
+      
+      </div>
+    </div>
+  </div>
+
+ <% end %>
+
+<%= will_paginate @users %>
+

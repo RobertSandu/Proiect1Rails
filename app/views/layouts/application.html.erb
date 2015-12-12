@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ReteaSocialaRuby</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+</head>
+<body role="document">
+
+<style type="text/css">
+	
+	body {
+		padding-top: 70px;
+	}
+
+</style>
+
+<%= render 'layouts/header' %>
+
+<div class="container">
+
+	<%= yield %>
+	<%= render 'layouts/footer' %>
+	<%= debug(params) if Rails.env.development? %>
+
+</div>
+
+
+
+
+</body>
+</html>

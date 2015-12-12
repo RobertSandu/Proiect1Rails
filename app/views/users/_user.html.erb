@@ -1,0 +1,60 @@
+<div class="container">
+  <div class="row">
+  	<div class="col-md-12">
+    
+      <div class="panel panel-default">
+			<div class="panel-body">
+              		<div class="row">
+	              		<div class="row">
+		                        <div class="col-xs-12 col-sm-8 col-sm-offset-2">
+		                            <h2><%= link_to user.name, user %></h2>
+		                            <p><strong>Email: </strong> <%= user.email %></p>
+		                            <p><strong>Gender: </strong> <%= user.sex %> </p>
+		                            <p><strong>Description: </strong> <%= user.description %> </p>
+
+		                            <p><strong>Skills: </strong>
+		                                <span class="label label-info tags">html5</span> 
+		                                <span class="label label-info tags">css3</span>
+		                                <span class="label label-info tags">jquery</span>
+		                                <span class="label label-info tags">bootstrap3</span>
+		                            </p>
+		                        </div><!--/col-->          
+		                        <div class="col-xs-12 col-sm-2 text-center">
+		                                <%= gravatar_link user%>
+		                                <ul class="list-inline ratings text-center" title="Ratings">
+		                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+		                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+		                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+		                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+		                                  <li><a href="#"><span class="fa fa-star fa-lg"></span></a></li>
+		                                </ul>
+		                        </div><!--/col-->
+	                        </div>
+
+                        <div class="row">
+	                        <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+	                            <h2><strong><%= user.followers.count %></strong></h2>                    
+	                            <p><small><%= link_to "Followers", followers_user_path(user) %></small></p>
+	                            
+	                        </div><!--/col-->
+	                        <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+	                            <h2><strong><%= user.following.count %></strong></h2>                    
+	                            <p><small><%= link_to "Following", following_user_path(user) %></small></p>
+	                            
+	                        </div><!--/col-->
+	                        <div class="col-xs-12 col-sm-3 col-sm-offset-1">
+	                            <h2><strong><%= user.tweets.count %></strong></h2>                    
+	                            <p><small>Tweets</small></p>
+	                             
+	                        </div><!--/col-->
+	                        
+                        </div><!--/row-->
+              		</div><!--/row-->
+              </div><!--/panel-body-->
+          </div><!--/panel-->
+
+    
+    
+    </div>
+  </div>
+</div>	

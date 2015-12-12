@@ -1,0 +1,16 @@
+<%= form_for(@tweet) do |f| %>
+
+<div class="row">
+
+	<div class="col-md-4 col-md-offset-4">
+		
+		<div class="field">
+			<%= f.text_area :content, placeholder: "New tweet", :cols => 50 %>
+		</div>
+			<%= f.submit "Post", class: "btn btn-primary" %>
+
+	</div>
+
+</div>
+
+<% end %>

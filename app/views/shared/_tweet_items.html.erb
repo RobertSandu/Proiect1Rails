@@ -1,0 +1,8 @@
+<% if @tweet_items %>
+	<% if @tweet_items.any? %>
+		
+			<%= render @tweet_items  %>
+			
+		<%= will_paginate @tweet_items  %>
+	<% end %>
+<% end %>

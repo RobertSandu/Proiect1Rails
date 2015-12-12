@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Tweet:</strong>
+  <%= @model.tweet %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @model.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @model.content %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @model.user %>
+</p>
+
+<%= link_to 'Edit', edit_model_path(@model) %> |
+<%= link_to 'Back', models_path %>

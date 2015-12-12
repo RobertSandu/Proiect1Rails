@@ -1,0 +1,39 @@
+<br \> <br \>
+
+
+
+<div class="container">
+<h1>Inbox</h1>
+
+<% if @conversations == nil || @conversations.empty? %>
+    <i>Your Inbox folder is currently empty</i>
+    <%end%>
+  <% @conversations.each do |conversation| %>
+      <div class="panel panel-success">
+
+        <div class="panel-heading">
+          <h3 class="panel-title">
+          <% conversation.participants.each do |participant| %>
+            <% if participant != current_user %>
+              <%= participant.name %>
+            <% end %>
+          <% end %>
+          </h3>
+        </div>
+
+        <div class="panel-body">
+
+          <%= link_to conversation.subject, conversation_path(conversation) %>
+
+        </div>
+
+        <div class="panel-footer">
+          
+          <%= conversation.updated_at.strftime("%a, %m/%e/%Y %I:%M %p") %> 
+
+        </div>
+
+      </div>
+  <% end %>
+  <%= will_paginate @conversations %>
+</div>

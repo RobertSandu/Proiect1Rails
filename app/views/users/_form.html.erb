@@ -1,0 +1,108 @@
+<%= form_for(@user) do |f| %>
+<div class="form-inline">
+  <% if @user.errors.any? %>
+    <div class="row">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      
+      
+        <div class="alert alert-danger" role="alert">
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+             <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+        
+     
+      
+    </div>
+  <% end %>
+
+  <div class="row">
+    <%= f.label :name, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      
+      
+      <%= f.text_field :name, :class => "form-control", :required => true %>
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <%= f.label :email, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      
+      
+      <%= f.email_field :email, :class => "form-control", :required => true %>
+
+
+    </div>
+  </div>
+
+  <div class="row">
+    <%= f.label :email_confirmation, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      
+      
+      <%= f.email_field :email_confirmation, :class => "form-control", :required => true %>
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <%= f.label :password, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      
+      
+      <%= f.password_field :password, :class => "form-control", :required => true %>
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <%= f.label :password_confirmation, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      
+      
+      <%= f.password_field :password_confirmation, :class => "form-control", :required => true %>
+
+    </div>
+    
+  </div>
+
+
+  <div class="row">
+    <%= f.label :description, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      
+      
+      <%= f.text_area :description, :class => "form-control", :required => true, :rows => 5, :cols => 50, :required => true %>
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+    <%= f.label :description, :class => "col-sm-4 control-label" %>
+    <div class="col-sm-8">
+      
+      
+      <%= f.select :sex, %w{Male Female}, required: true, placeholder: 'Gender', class: 'form-control' %>
+
+    </div>
+    
+  </div>
+
+  <div class="row">
+
+    <%= f.submit "Sign up", class: "btn btn-primary"%>
+
+  </div>
+  
+  
+</div>
+<% end %>

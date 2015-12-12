@@ -1,0 +1,52 @@
+
+	<div class="row">
+
+
+			<div class="col-sm-2 col-sm-offset-2">
+				
+				<%= gravatar_link tweet.user %>
+
+			</div>
+
+			<div class="col-sm-8">
+
+				<div class="row">
+					
+					<div class="col-sm-4">
+						<span class=""><%= link_to tweet.user.name, tweet.user %></span>
+					</div>
+
+					<div class="col-sm-4">
+						<span class="">
+						Posted <%= time_ago_in_words(tweet.created_at) %> ago.
+						</span>
+					</div>
+
+				</div>
+
+				<div class="row">
+
+					<div class="col-sm-12">
+
+						<span class="text-primary"><%= tweet.content %></span>
+
+					</div>
+
+				</div>
+
+
+				<div class="row">
+			
+
+					<div class="col-sm-4">
+
+						<% if current_user == tweet.user %>
+						<%= link_to "delete", tweet, method: :delete, data: { confirm: "You sure?" }%>
+						<% end %>
+
+					</div>		
+					
+				</div>
+
+			</div>
+	</div>
